@@ -42,14 +42,14 @@
 }
 
 .nav-item:hover {
-  background-color: #08A689;
+  background-color: #c9c9d4;
 }
 
 .nav-icon {
-  font-size: 18px;
+  font-size: 18px;  
   width: 18px;
   height: 18px;
-  color: #156F9C;
+  color: #2495ce;
   display: inline-flex;
   align-items: center;
   justify-content: center;

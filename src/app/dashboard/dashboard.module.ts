@@ -4,6 +4,8 @@ import { TestComponent } from './test/test.component';
 import { UsersComponent } from './users/users.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { SharedModule } from '../shared/shared.module';
+import { TestReportsComponent } from './test-reports/test-reports.component';
+import { AccountComponent } from './account/account.component';
 
 
 
@@ -11,7 +13,9 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     TestComponent,
     UsersComponent,
-    UploadFilesComponent
+    UploadFilesComponent,
+    TestReportsComponent,
+    AccountComponent
   ],
   imports: [
     CommonModule,

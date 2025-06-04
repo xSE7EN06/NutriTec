@@ -16,6 +16,6 @@ export class LoginComponent {
   }
 
   onLogin(){
-    this.route.navigate(['/dashboard/test']);
+    this.route.navigate(['/dashboard/upload-files']);
   }
 }
