@@ -4,12 +4,16 @@ import { LoginComponent } from './auth/login/login.component';
 import { TestComponent } from './dashboard/test/test.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { UploadFilesComponent } from './dashboard/upload-files/upload-files.component';
+import { TestReportsComponent } from './dashboard/test-reports/test-reports.component';
+import { AccountComponent } from './dashboard/account/account.component';
 
 const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'dashboard/test', component: TestComponent },
   { path: 'dashboard/users', component: UsersComponent },
   { path: 'dashboard/upload-files', component: UploadFilesComponent },
+  { path: 'dashboard/test-reports', component: TestReportsComponent},
+  { path: 'dashboard/account', component: AccountComponent},
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth/login' }
 ];
