@@ -1,0 +1,109 @@
+/* Establece el fondo de la página completa */
+body {
+  background-color: #f5f5f5; /* Un gris claro, ajusta según tus preferencias */
+  margin: 0; /* Elimina los márgenes por defecto */
+  padding: 0; /* Elimina el padding por defecto */
+  font-family: Arial, sans-serif; /* Opcional: establece una fuente general */
+}
+
+
+.login-page {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Utiliza el 100% de la altura de la ventana */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Color de fondo opcional */
+}
+
+mat-card {
+  max-width: 900px; /* O el ancho máximo que prefieras */
+  width: 100%; /* Utiliza todo el ancho hasta el máximo especificado */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra sutil para destacar la tarjeta */
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos estén en fila */
+  align-items: center;
+  justify-content: space-around; /* Espaciado alrededor de los elementos */
+}
+
+.form-container, .logo-container {
+  flex: 1;
+  padding: 20px; /* Agrega padding para no pegar los contenidos a los bordes */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img{
+  max-width: 400px; /* Limita el tamaño del logo */
+  height: auto; /* Mantiene la proporción */
+  margin-top: -100px;
+}
+
+/* Estilos para formularios y botones */
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%; /* Hace que el botón se expanda para llenar el contenedor */
+  margin-top: 20px;
+  background-color: #156F9C !important;
+  color: #FFFFFF !important;
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover{
+   background-color: #2e94c7 !important;
+}
+
+/* En tu archivo styles.css o en el componente específico */
+mat-card-header {
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+mat-card-title {
+  font-size: 24px; /* Ajusta según tus necesidades */
+  margin-bottom: 10px; /* Ajusta según tus necesidades */
+}
+
+.text{
+  font-family: 'Alata', sans-serif;
+  font-size: 14.5px;
+  color: rgba(30, 30, 30, 0.58); /* recomendado */
+}
+
+.titulo-centrado {
+  font-size: 25px;
+  color: rgba(30, 30, 30, 0.58); /* recomendado */
+}
+
+.content-text{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*Css inputs*/
+.custom-input {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.custom-input .mat-form-field-outline {
+  border-radius: 12px;
+}
+
+.custom-input .mat-form-field-wrapper {
+  padding: 0 8px;
+}

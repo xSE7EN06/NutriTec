@@ -1,0 +1,79 @@
+.sidenav-container {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.custom-sidenav {
+  width: 250px;
+  background-color: #F2F2F7;
+  padding: 20px 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);  
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 5px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-top: -20px;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1c33;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+  margin: 12px 0;
+  border-radius: 15px !important;
+  transition: background 0.2s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background-color: #08A689;
+}
+
+.nav-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: #156F9C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-label {
+  font-size: 14px;
+  color: #156F9C;
+  font-family: 'Alata', sans-serif;
+  margin-left: 14px;
+}
+
+.active-item {
+  background-color: #156F9C;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active-item .nav-icon {
+  color: white;
+}
+
+.active-item .nav-label{
+    color: white;
+}

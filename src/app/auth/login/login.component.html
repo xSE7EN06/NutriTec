@@ -1,0 +1,32 @@
+<div class="login-page">
+  <mat-card>
+    <div class="card-layout">
+      <div class="form-container">
+        <mat-card-header>
+          <p class="titulo-centrado">Iniciar Sesión</p>
+        </mat-card-header>
+        <mat-card-content>
+          <form>
+            <mat-form-field appearance="outline" class="custom-input">
+              <mat-icon matPrefix>mail</mat-icon>
+              <input matInput placeholder="Correo" type="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="custom-input">
+              <mat-icon matPrefix>lock</mat-icon>
+              <input matInput placeholder="Contraseña" type="password" />
+            </mat-form-field>
+            <button mat-raised-button type="submit" class="btn-login" (click)="onLogin()">
+              Iniciar Sesión
+            </button>
+            <br />
+            <br />
+          </form>
+        </mat-card-content>
+      </div>
+      <div class="logo-container">
+        <img src="Imagen-removebg-preview.png" alt="Logo de la Empresa" />
+      </div>
+    </div>
+  </mat-card>
+</div>

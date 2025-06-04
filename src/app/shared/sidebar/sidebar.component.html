@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="custom-sidenav">
+    <div class="logo-section">
+      <img src="Imagen-removebg-preview.png" class="logo" alt="UTCV Logo" />
+      <h2 class="brand-title">NutriTec</h2>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item class="nav-item" routerLink="/dashboard/upload-files" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">pie_chart</mat-icon>
+        <span class="nav-label">Subir archivos</span>
+      </a>
+
+      <a mat-list-item class="nav-item" routerLink="/dashboard/test" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">pie_chart_outline</mat-icon>
+        <span class="nav-label">Realizar test</span>
+      </a>
+
+      <a mat-list-item class="nav-item" routerLink="/dashboard/test-report" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">show_chart</mat-icon>
+        <span class="nav-label">Reporte de ensayos</span>
+      </a>
+
+      <a mat-list-item class="nav-item" routerLink="/dashboard/users" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">assignment_ind</mat-icon>
+        <span class="nav-label">Usuarios</span>
+      </a>
+
+      <a mat-list-item class="nav-item" routerLink="/cuenta" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">settings</mat-icon>
+        <span class="nav-label">Cuenta</span>
+      </a>
+
+      <a mat-list-item class="nav-item" routerLink="/auth/login" routerLinkActive="active-item" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav-icon">logout</mat-icon>
+        <span class="nav-label">Cerrar sesión</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
