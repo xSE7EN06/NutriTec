@@ -6,6 +6,12 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { SharedModule } from '../shared/shared.module';
 import { TestReportsComponent } from './test-reports/test-reports.component';
 import { AccountComponent } from './account/account.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -19,7 +25,14 @@ import { AccountComponent } from './account/account.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MatIconModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule
   ]
 })
 export class DashboardModule { }

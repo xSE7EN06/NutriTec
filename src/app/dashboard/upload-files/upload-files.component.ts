@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-upload-files',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './upload-files.component.html',
   styleUrl: './upload-files.component.css'
 })
-export class UploadFilesComponent {
+export class UploadFilesComponent{
+   clienteForm!: FormGroup;
 
+  constructor(private fb: FormBuilder) {}
 }
