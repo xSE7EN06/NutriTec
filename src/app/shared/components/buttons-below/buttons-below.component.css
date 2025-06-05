@@ -1,0 +1,22 @@
+.buttons-content-down{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-left{
+  width:20%; /* Hace que el botón se expanda para llenar el contenedor */
+  background-color: #FFFFFF !important;
+  color: #156F9C !important;
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  border: 1px solid #156F9C;
+}
+
+.btn-right{
+  width:20%; /* Hace que el botón se expanda para llenar el contenedor */
+  background-color: #156F9C !important;
+  color: #FFFFFF !important;
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+}
