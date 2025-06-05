@@ -1,6 +1,103 @@
 <app-sidebar>
-  <div class="contenido">
-    <h2>Bienvenido al UploadFile</h2>
-    <!-- Aquí va el contenido del componente -->
+  <div class="upload-container">
+    <div class="header">
+      <mat-icon class="icon-header">info</mat-icon>
+      <h2>Subir archivos de excel, para generacion de archvio FOLAB</h2>
+    </div>
+
+    <mat-vertical-stepper [linear]="false">
+      <mat-step>
+        <ng-template matStepLabel>Datos de recepción</ng-template>
+        <div class="step-title-reception">
+          <p>Ingresa los siguientes datos.</p>
+        </div>
+        <div class="step-content-form">
+          <form [formGroup]="clienteForm" class="form-wrapper two-columns">
+            <mat-form-field appearance="outline" class="custom-input">
+              <mat-icon matPrefix>person</mat-icon>
+              <input
+                matInput
+                placeholder="Nombre completo o razón social del cliente."
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="custom-input">
+              <mat-icon matPrefix>location_on</mat-icon>
+              <input matInput placeholder="Dirección" />
+            </mat-form-field>
+
+            <mat-form-field
+              appearance="outline"
+              class="custom-input full-width"
+            >
+              <mat-icon matPrefix>phone</mat-icon>
+              <input matInput placeholder="Télefono" type="phone" />
+            </mat-form-field>
+
+            <mat-form-field
+              appearance="outline"
+              class="custom-input full-width"
+            >
+              <mat-icon matPrefix>device_thermostat</mat-icon>
+              <input matInput placeholder="Temperatura del laboratorio" />
+            </mat-form-field>
+          </form>
+        </div>
+
+        <app-buttons-below
+          [showButtonLeft]="false"
+          [showButtonRight]="true"
+          textButtonRight="Siguiente"
+        ></app-buttons-below>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Repprtes de calculos de Excel</ng-template>
+        <div class="step-content">
+          <mat-icon class="icon-upload">cloud_upload</mat-icon>
+          <p>
+            Arrastra o selecciona los archivos de cada prueba en formato (.xlsx)
+          </p>
+        </div>
+        <app-buttons-below
+          [showButtonLeft]="true"
+          [showButtonRight]="true"
+          textButtonRight="Siguiente"
+          textButtonLeft="Regresar"
+        ></app-buttons-below>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Realizar FOLAB</ng-template>
+        <div class="step-content-prewview">
+          <div class="summary-block">
+            <h3>Datos de recepción</h3>
+            <p><strong>Nombre o razón social del cliente:</strong> Pedro</p>
+            <p><strong>Dirección:</strong> nose</p>
+            <p><strong>Teléfono:</strong> hola</p>
+            <p>
+              <strong>Temperatura del laboratorio:</strong>
+              40 °C
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>Archivos cargados</h3>
+            <ul>
+              <li>Humedad: cenizas.pdf</li>
+              <li>Cenizas: cenizas.pdf</li>
+              <li>Proteínas: cenizas.pdf</li>
+              <li>Grasas: cenizas.pdf</li>
+            </ul>
+          </div>
+        </div>
+        <app-buttons-below
+          [showButtonLeft]="true"
+          [showButtonRight]="true"
+          textButtonRight="Finalizar"
+          textButtonLeft="Regresar"
+        ></app-buttons-below>
+      </mat-step>
+    </mat-vertical-stepper>
   </div>
 </app-sidebar>
