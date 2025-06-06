@@ -1,6 +1,73 @@
 <app-sidebar>
-  <div class="contenido">
-    <h2>Bienvenido a Reporte de Ensayos</h2>
-    <!-- Aquí va el contenido del componente -->
+  <div class="test-reports-container">
+    <div class="header">
+      <mat-icon class="icon-header">info</mat-icon>
+      <h2>Reportes de ensayo</h2>
+    </div>
+
+    <div class="header-options">
+      <button mat-flat-button class="custom-button" (click)="goUploadFile()">
+        <mat-icon>add</mat-icon>
+        Crear nuevo reporte
+      </button>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Ingrese folio, nombre o razón social" />
+      </mat-form-field>
+    </div>
+
+    <div class="mat-elevation-z2 report-table">
+      <table mat-table [dataSource]="dataSource" class="custom-table">
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.no }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="folio">
+          <th mat-header-cell *matHeaderCellDef>Folio</th>
+          <td mat-cell *matCellDef="let element">{{ element.folio }}</td>
+        </ng-container>
+
+         <ng-container matColumnDef="nombre-razon-social">
+          <th mat-header-cell *matHeaderCellDef>Nombre o razon social</th>
+          <td mat-cell *matCellDef="let element">{{ element.nombreRazonSocial }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef>Fecha</th>
+          <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button class="btnDownload">
+              <mat-icon>download</mat-icon>
+            </button>
+            <button mat-icon-button class="btnDelete" (click)="openDialog()">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <div class="paginator-container">
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements"
+        >
+        </mat-paginator>
+      </div>
+    </div>
   </div>
 </app-sidebar>
