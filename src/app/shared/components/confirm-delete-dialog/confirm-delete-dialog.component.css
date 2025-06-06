@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.icon-header {
+  color: #eec028;
+  font-size: 32px;
+  width: 30px;
+  height: 30px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.text-header-modal {
+  font-family: 'Alata', sans-serif;
+  font-size: 17px;
+  font-weight: 550;
+  color: #333;
+  margin-right: 50px;
+}
+
+.text-subheader-modal{
+    font-family: 'Alata', sans-serif;
+}
+
+
+.w-full{
+    width: 100%;
+}
+
+.icon-input{
+    color: #156F9C;
+}
+
+.btnCancel{
+    color: #156F9C !important;
+    font-family: 'Alata', sans-serif;
+    width: 30%;
+    border: 1.5px solid #156F9C;
+}
+
+.btnDelete{
+    background-color: #156F9C !important;
+    color: #ffffff !important;
+    font-family: 'Alata', sans-serif;
+    width: 30%;
+}
