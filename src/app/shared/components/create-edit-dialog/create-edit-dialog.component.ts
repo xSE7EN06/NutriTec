@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, Input } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-edit-dialog',
@@ -9,7 +9,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class CreateEditDialogComponent {
 
-  constructor(private dialogRef: MatDialogRef<CreateEditDialogComponent>){
+  
+
+  constructor(private dialogRef: MatDialogRef<CreateEditDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any){
 
   }
   

@@ -1,7 +1,9 @@
 <div class="header">
   <div class="header-left">
     <mat-icon class="icon-header">person_add</mat-icon>
-    <h2 mat-dialog-title class="text-header-modal">Agregar usuario</h2>
+    <h2 mat-dialog-title class="text-header-modal">
+      {{ data.modo === "editar" ? "Editar usuario" : "Agregar usuario" }}
+    </h2>
   </div>
   <button mat-icon-button class="close-button" (click)="closeDialog()">
     <mat-icon>close</mat-icon>
@@ -12,7 +14,13 @@
   <mat-stepper linear #stepper>
     <mat-step>
       <ng-template matStepLabel>Datos personales</ng-template>
-      <p class="text-subheader-modal">Ingresa los siguientes datos.</p>
+      <p class="text-subheader-modal">
+        {{
+          data.modo === "editar"
+            ? "Modifica los datos necesarios."
+            : "Ingresa los siguientes datos."
+        }}
+      </p>
       <!-- Imagen a la izquierda -->
       <div class="two-column-layout">
         <!-- Imagen a la izquierda -->
@@ -20,7 +28,7 @@
           <div class="image-placeholder">
             <div class="inner-circle"></div>
             <button class="upload-btn">
-              <mat-icon style="margin-top: 5px;">add_a_photo</mat-icon>
+              <mat-icon style="margin-top: 5px">add_a_photo</mat-icon>
             </button>
           </div>
         </div>
@@ -32,18 +40,18 @@
             class="full"
             style="margin-top: 10px"
           >
-           <mat-icon matPrefix>person</mat-icon>
+            <mat-icon matPrefix>person</mat-icon>
             <input matInput placeholder="Nombres" />
           </mat-form-field>
 
           <div class="two-columns">
             <mat-form-field appearance="outline">
-               <mat-icon matPrefix>person</mat-icon>
+              <mat-icon matPrefix>person</mat-icon>
               <input matInput placeholder="Apellido Paterno" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-               <mat-icon matPrefix>person</mat-icon>
+              <mat-icon matPrefix>person</mat-icon>
               <input matInput placeholder="Apellido Materno" />
             </mat-form-field>
           </div>
@@ -63,8 +71,14 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Datos de usuario</ng-template>
-      <p class="text-subheader-modal">Ingresa los siguientes datos.</p>
-      
+      <p class="text-subheader-modal">
+        {{
+          data.modo === "editar"
+            ? "Modifica los datos necesarios."
+            : "Ingresa los siguientes datos."
+        }}
+      </p>
+
       <div class="two-columns" style="margin-top: 10px">
         <mat-form-field appearance="outline">
           <mat-icon matPrefix>mail</mat-icon>
@@ -95,41 +109,50 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Guardar</ng-template>
-    
-    <div class="cards-container">
-    <!-- Card: Datos personales -->
-    <mat-card class="summary-card">
-      <mat-card-header>
-        <mat-card-title>Datos personales</mat-card-title>
-        <button mat-icon-button color="primary" (click)="stepper.selectedIndex = 0">
-          <mat-icon>edit</mat-icon>
-        </button>
-      </mat-card-header>
-      <mat-card-content>
-        <p><strong>Nombres:</strong></p>
-        <p><strong>Apellido Paterno:</strong></p>
-        <p><strong>Apellido Materno:</strong> </p>
-        <p><strong>Teléfono:</strong></p>
-      </mat-card-content>
-    </mat-card>
 
-    <!-- Card: Datos de usuario -->
-    <mat-card class="summary-card">
-      <mat-card-header>
-        <mat-card-title>Datos de usuario</mat-card-title>
-        <button mat-icon-button color="primary" (click)="stepper.selectedIndex = 1">
-          <mat-icon>edit</mat-icon>
-        </button>
-      </mat-card-header>
-      <mat-card-content>
-        <p><strong>Correo:</strong></p>
-        <p><strong>Confirmar correo:</strong></p>
-        <p><strong>Contraseña:</strong> ********</p>
-      </mat-card-content>
-    </mat-card>
+      <div class="cards-container">
+        <!-- Card: Datos personales -->
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Datos personales</mat-card-title>
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="stepper.selectedIndex = 0"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Nombres:</strong></p>
+            <p><strong>Apellido Paterno:</strong></p>
+            <p><strong>Apellido Materno:</strong></p>
+            <p><strong>Teléfono:</strong></p>
+          </mat-card-content>
+        </mat-card>
 
-  </div>
-  <p style="margin-top: 24px;">Si todo está correcto, presiona <strong>Finalizar</strong>.</p>
+        <!-- Card: Datos de usuario -->
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Datos de usuario</mat-card-title>
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="stepper.selectedIndex = 1"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Correo:</strong></p>
+            <p><strong>Confirmar correo:</strong></p>
+            <p><strong>Contraseña:</strong> ********</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <p style="margin-top: 24px">
+        Si todo está correcto, presiona <strong>Finalizar</strong>.
+      </p>
 
       <app-buttons-below
         [showButtonLeft]="true"
