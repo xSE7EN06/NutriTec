@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ConfirmDeleteDialogComponent } from '../../shared/components/confirm-delete-dialog/confirm-delete-dialog.component';
 import { CreateEditDialogComponent } from '../../shared/components/create-edit-dialog/create-edit-dialog.component';
+import { DeleteUserDialogComponent } from '../../shared/components/delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -44,7 +45,7 @@ export class UsersComponent {
     }
   ];
 
-  openDialog() {
+  openDialog(modo: 'crear' | 'editar') {
     const dialogRef = this.dialog.open(CreateEditDialogComponent, {
       width: '90%',
       maxWidth: '1000px',
@@ -54,11 +55,20 @@ export class UsersComponent {
       panelClass: 'custom-dialog-container',
       disableClose: false,
       autoFocus: false,
+      data:{
+        modo: modo
+      }
     });
 
      dialogRef.afterClosed().subscribe(result => {
       console.log('The patient dialog was closed');
       // La recarga se maneja a través de la suscripción al servicio
     });
+  }
+
+  openDialogDelete(){
+    this.dialog.open(DeleteUserDialogComponent, {
+    width: '800px',
+  });
   }
 }
