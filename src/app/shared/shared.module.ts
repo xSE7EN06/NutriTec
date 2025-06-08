@@ -14,12 +14,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { CreateEditDialogComponent } from './components/create-edit-dialog/create-edit-dialog.component';
 import { MatCardModule } from '@angular/material/card';
+import { DeleteUserDialogComponent } from './components/delete-user-dialog/delete-user-dialog.component';
 
 
 
 
 @NgModule({
- declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent],
+ declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent, DeleteUserDialogComponent],
   imports: [
     CommonModule,
     RouterModule,
