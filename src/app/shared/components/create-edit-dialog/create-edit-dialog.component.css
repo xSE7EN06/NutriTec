@@ -1,0 +1,171 @@
+
+/*Estilos del modal-dialog contenido*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.icon-header {
+  color: #156F9C;
+  font-size: 32px;
+  width: 30px;
+  height: 30px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.full{
+  width: 100%;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.text-header-modal {
+  font-family: 'Alata', sans-serif;
+  font-size: 17px;
+  font-weight: 550;
+  color: #333;
+  margin-right: 50px;
+}
+
+.text-subheader-modal{
+    font-family: 'Alata', sans-serif;
+    color: #156F9C;
+}
+
+.btnCancel{
+    color: #156F9C !important;
+    font-family: 'Alata', sans-serif;
+    width: 30%;
+    border: 1.5px solid #156F9C;
+}
+
+.btnDelete{
+    background-color: #156F9C !important;
+    color: #ffffff !important;
+    font-family: 'Alata', sans-serif;
+    width: 30%;
+}
+
+.close-button {
+  color: #555;
+}
+
+.two-column-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.image-upload-section {
+  flex: 0 0 180px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.image-placeholder {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #e0e0e0;
+  border: 2px dashed #156F9C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #cfd8dc;
+  border-radius: 50%;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 43px;
+  width: 43px;
+  background-color: #156F9C;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.upload-btn mat-icon {
+  font-size: 22px;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+
+/*Estilos de card*/
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.summary-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-title {
+  font-family: 'Alata', sans-serif;
+  font-size: 17px;
+  color: #156F9C;
+}
+
+p{
+  font-family: 'Alata', sans-serif;
+}
+
+mat-card-header button{
+  border: 1px solid #156F9C;
+  color: #156F9C;
+  cursor: pointer;
+}
+
+mat-card-header button:hover{
+  background-color: #156F9C;
+  color: white;
+}
+
+
+/*Estilos de los puntos de los stepper*/
+::ng-deep .mat-step-icon{
+  background-color: #156F9C !important;
+  color: white !important;
+}
