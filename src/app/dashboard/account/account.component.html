@@ -1,6 +1,87 @@
 <app-sidebar>
-  <div class="contenido">
-    <h2>Bienvenido a Cuenta</h2>
-    <!-- Aquí va el contenido del componente -->
+  <div class="account-container">
+    <div class="header">
+      <mat-icon class="icon-header">info</mat-icon>
+      <h2>Cuenta</h2>
+    </div>
+    <p class="module-description">
+      En esta sección puedes visualizar y actualizar la información personal
+      asociada a tu cuenta, como tu nombre, correo electrónico, número
+      telefónico y dirección. También puedes gestionar tu imagen de perfil.
+    </p>
+
+    <div class="settings-layout">
+      <mat-card class="card-left">
+        <div class="avatar-section">
+          <img
+            src="https://static-00.iconduck.com/assets.00/user-circle-icon-256x256-b5rx7262.png"
+            class="avatar"
+          />
+          <div class="conten-button">
+            <button mat-button color="primary" class="change-btn" (click)="openBottomSheet()">
+              <mat-icon class="btn-icon-photo">add_a_photo</mat-icon>
+              Cambiar foto
+            </button>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p class="quote-label">Angel Geovanny Alvarez Ordinola</p>
+          <p class="quote-text">
+             Nota: Si lo deseas, puedes cambiar únicamente tu foto de perfil sin alterar los demás datos.
+          </p>
+        </div>
+      </mat-card>
+
+      <mat-card class="card-right">
+        <h2 class="form-title">Información de tu cuenta</h2>
+
+        <form class="form-grid">
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput placeholder="Nombres" [readonly]="true" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput placeholder="Apellido paterno" [readonly]="true" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput placeholder="Apellido materno" [readonly]="true" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>phone</mat-icon>
+            <input
+              matInput
+              type="email"
+              placeholder="Télefono"
+              [readonly]="true"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>mail</mat-icon>
+            <input matInput placeholder="Correo" [readonly]="true" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput placeholder="Contraseña" [readonly]="true" />
+          </mat-form-field>
+        </form>
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="update-btn"
+          (click)="openDialog('editar')"
+        >
+          Editar
+        </button>
+      </mat-card>
+    </div>
   </div>
 </app-sidebar>
