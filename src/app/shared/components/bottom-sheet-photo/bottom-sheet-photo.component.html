@@ -1,0 +1,25 @@
+<mat-nav-list>
+  <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
+    <mat-icon matListIcon class="icon">photo_camera</mat-icon>
+    <span matListItemTitle style="margin-left: 30px">Tomar foto</span>
+    <span matLine style="margin-left: 8px">Usar la cámara del dispositivo</span>
+  </a>
+
+  <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
+    <mat-icon matListIcon>photo_library</mat-icon>
+    <span matListItemTitle style="margin-left: 30px">Seleccionar fotografía</span>
+    <span matLine style="margin-left: 8px">Elegir una imagen del almacenamiento</span>
+  </a>
+
+  <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
+    <mat-icon matListIcon>delete</mat-icon>
+    <span matListItemTitle style="margin-left: 30px">Eliminar foto</span>
+    <span matLine style="margin-left: 8px">Quitar imagen actual del perfil</span>
+  </a>
+
+  <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
+    <mat-icon matListIcon>close</mat-icon>
+    <span matListItemTitle style="margin-left: 30px">Cancelar</span>
+    <span matLine style="margin-left: 8px">Salir sin hacer cambios</span>
+  </a>
+</mat-nav-list>
