@@ -1,6 +1,224 @@
 <app-sidebar>
-  <div class="contenido">
-    <h2>Bienvenido al Test</h2>
-    <!-- Aquí va el contenido del componente -->
+  <div class="test-container">
+    <div class="header">
+      <mat-icon class="icon-header">info</mat-icon>
+      <h2>Generar reporte FOLAB</h2>
+    </div>
+
+    <p class="module-description">
+      Este módulo está diseñado para un registro minucioso y completo, por lo
+      que su implementación se contempla en una siguiente etapa del proyecto
+      (durante la próxima estadía).
+    </p>
+
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+         Sección 1
+        </ng-template>
+        <div class="tab-content">
+          <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel expanded="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon style="margin-right: 15px; color: green;">check_circle</mat-icon>
+                  Datos proporcionados por el cliente.
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="form-container">
+                <div class="step-title-reception">
+                  <p>Ingresa los siguientes datos.</p>
+                </div>
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Nombre completo o razón social del cliente"
+                    />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>description</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Ingresa el folio de la muestra"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>location_on</mat-icon>
+                    <input matInput placeholder="Dirección del cliente" />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>edit</mat-icon>
+                    <input matInput placeholder="Nombre de la muestra" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>iso</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Ingresa el volumen de la muestra"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <input
+                      matInput
+                      [matDatepicker]="picker1"
+                      placeholder="Fecha de elaboración"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <input
+                      matInput
+                      [matDatepicker]="picker2"
+                      placeholder="Fecha de muestreo"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matIconPrefix>add_box</mat-icon>
+                    <input
+                      matInput
+                      type="number"
+                      placeholder="Número de piezas"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded="true">
+               <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon style="margin-right: 15px; color: green;">check_circle_outline</mat-icon>
+                  Datos proporcionados por el cliente.
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div class="form-container">
+                <div class="step-title-reception">
+                  <p>Ingresa los siguientes datos.</p>
+                </div>
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Nombre completo o razón social del cliente"
+                    />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>description</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Ingresa el folio de la muestra"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>location_on</mat-icon>
+                    <input matInput placeholder="Dirección del cliente" />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>edit</mat-icon>
+                    <input matInput placeholder="Nombre de la muestra" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matPrefix>iso</mat-icon>
+                    <input
+                      matInput
+                      placeholder="Ingresa el volumen de la muestra"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline" class="form-field">
+                    <input
+                      matInput
+                      [matDatepicker]="picker1"
+                      placeholder="Fecha de elaboración"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <input
+                      matInput
+                      [matDatepicker]="picker2"
+                      placeholder="Fecha de muestreo"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                    <mat-icon matIconPrefix>add_box</mat-icon>
+                    <input
+                      matInput
+                      type="number"
+                      placeholder="Número de piezas"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          Second
+        </ng-template>
+        Content 2
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          Third
+        </ng-template>
+
+        Content 3
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </app-sidebar>
