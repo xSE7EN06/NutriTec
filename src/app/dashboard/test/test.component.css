@@ -1,0 +1,86 @@
+.test-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icon-header {
+      color: #156F9C;
+    }
+
+h2 {
+      margin: 0;
+      font-family: 'Alata', sans-serif;
+    }
+
+  .module-description {
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 16px;
+  max-width: 1000px;
+ }
+
+ mat-expansion-panel{
+  border: 0.2px solid #919292;
+ }
+ 
+
+ /*Diseño del contenido del formulario en datos porporcionado por el cliente*/
+ .step-title-reception{
+  font-size: 14px;
+  font-family: 'Alata', sans-serif;
+  color: #156F9C;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-field{
+   flex: 1 1 250px;
+  min-width: 250px;
+}
+
+
+/*Tabs*/
+.example-small-box, .example-large-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.example-small-box {
+  height: 100px;
+  width: 100px;
+}
+
+.tab-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
