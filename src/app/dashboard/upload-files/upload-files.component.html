@@ -2,7 +2,7 @@
   <div class="upload-container">
     <div class="header">
       <mat-icon class="icon-header">info</mat-icon>
-      <h2>Subir archivos de excel, para generacion de archvio FOLAB</h2>
+      <h2>Cargar Excel y generar documento FOLAB</h2> <!-- Corrección: solo la primera palabra en mayúscula (estilo de título opcional) -->
     </div>
 
     <mat-vertical-stepper [linear]="false">
@@ -17,7 +17,7 @@
               <mat-icon matPrefix>person</mat-icon>
               <input
                 matInput
-                placeholder="Nombre completo o razón social del cliente."
+                placeholder="Nombre completo o razón social del cliente"
               />
             </mat-form-field>
 
@@ -31,7 +31,7 @@
               class="custom-input full-width"
             >
               <mat-icon matPrefix>phone</mat-icon>
-              <input matInput placeholder="Télefono" type="phone" />
+              <input matInput placeholder="Teléfono" type="phone" /> <!-- Corrección: "Télefono" → "Teléfono" -->
             </mat-form-field>
 
             <mat-form-field
@@ -52,7 +52,7 @@
       </mat-step>
 
       <mat-step>
-        <ng-template matStepLabel>Repprtes de calculos de Excel</ng-template>
+        <ng-template matStepLabel>Reportes de cálculos de Excel</ng-template> <!-- Corrección: "Repprtes de calculos de Excel" → "Reportes de cálculos de Excel" -->
         <div class="step-content">
           <mat-icon class="icon-upload">cloud_upload</mat-icon>
           <p>
@@ -69,7 +69,7 @@
 
       <mat-step>
         <ng-template matStepLabel>Realizar FOLAB</ng-template>
-        <div class="step-content-prewview">
+        <div class="step-content-prewview"> <!-- (Tip: "prewview" debería ser "preview" si lo usas como clase en CSS) -->
           <div class="summary-block">
             <h3>Datos de recepción</h3>
             <p><strong>Nombre o razón social del cliente:</strong> Pedro</p>
