@@ -6,17 +6,46 @@
           <p class="titulo-centrado">Iniciar Sesión</p>
         </mat-card-header>
         <mat-card-content>
-          <form>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
             <mat-form-field appearance="outline" class="custom-input">
               <mat-icon matPrefix>mail</mat-icon>
-              <input matInput placeholder="Correo" type="email" />
+              <input
+                matInput
+                placeholder="Correo"
+                type="email"
+                formControlName="correo"
+              />
+              <mat-error *ngIf="loginForm.get('correo')?.hasError('required')">
+                El correo es obligatorio.
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('correo')?.hasError('pattern')">
+                Solo se permiten correos gmail.com o utcv.edu.mx
+              </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="custom-input">
+            <mat-form-field
+              appearance="outline"
+              class="custom-input"
+              style="margin-top: 10px"
+            >
               <mat-icon matPrefix>lock</mat-icon>
-              <input matInput placeholder="Contraseña" type="password" />
+              <input
+                matInput
+                placeholder="Contraseña"
+                type="password"
+                formControlName="password"
+              />
+              <mat-error
+                *ngIf="loginForm.get('password')?.hasError('required')"
+              >
+                La contraseña es obligatoria.
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
+                La contraseña debe tener al menos 6 caracteres, incluir letras y
+                números.
+              </mat-error>
             </mat-form-field>
-            <button mat-raised-button type="submit" class="btn-login" (click)="onLogin()">
+            <button mat-raised-button type="submit" class="btn-login">
               Iniciar Sesión
             </button>
             <br />
@@ -29,4 +58,7 @@
       </div>
     </div>
   </mat-card>
+
+  <app-spinner-loading [show]="isLoading"></app-spinner-loading>
+
 </div>
