@@ -16,12 +16,14 @@ import { CreateEditDialogComponent } from './components/create-edit-dialog/creat
 import { MatCardModule } from '@angular/material/card';
 import { DeleteUserDialogComponent } from './components/delete-user-dialog/delete-user-dialog.component';
 import { BottomSheetPhotoComponent } from './components/bottom-sheet-photo/bottom-sheet-photo.component';
+import { SpinnerLoadingComponent } from './components/spinner-loading/spinner-loading.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
 
 @NgModule({
- declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent, DeleteUserDialogComponent, BottomSheetPhotoComponent],
+ declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent, DeleteUserDialogComponent, BottomSheetPhotoComponent, SpinnerLoadingComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -34,11 +36,13 @@ import { BottomSheetPhotoComponent } from './components/bottom-sheet-photo/botto
     MatDialogModule,
     MatInputModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     SidebarComponent, 
-    ButtonsBelowComponent
+    ButtonsBelowComponent,
+    SpinnerLoadingComponent
   ]
 })
 export class SharedModule { }
