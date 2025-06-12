@@ -17,13 +17,13 @@
               <mat-icon matPrefix>person</mat-icon>
               <input
                 matInput
-                placeholder="Nombre completo o razón social del cliente"
+                placeholder="Nombre completo o razón social del cliente*"
               />
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="custom-input">
               <mat-icon matPrefix>location_on</mat-icon>
-              <input matInput placeholder="Dirección" />
+              <input matInput placeholder="Dirección*" />
             </mat-form-field>
 
             <mat-form-field
@@ -31,7 +31,7 @@
               class="custom-input full-width"
             >
               <mat-icon matPrefix>phone</mat-icon>
-              <input matInput placeholder="Teléfono" type="phone" />
+              <input matInput placeholder="Teléfono*" type="phone" />
             </mat-form-field>
 
             <mat-form-field
@@ -39,7 +39,7 @@
               class="custom-input full-width"
             >
               <mat-icon matPrefix>device_thermostat</mat-icon>
-              <input matInput placeholder="Temperatura del laboratorio" />
+              <input matInput placeholder="Temperatura del laboratorio*" />
             </mat-form-field>
           </form>
         </div>
@@ -52,12 +52,42 @@
       </mat-step>
 
       <mat-step>
-        <ng-template matStepLabel>Reportes de cálculos de Excel</ng-template> 
-        <div class="step-content">
+        <ng-template matStepLabel>Reportes de cálculos de Excel</ng-template>
+        <div
+          class="step-content"
+          (drop)="onFileDrop($event)"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          [class.drag-over]="isDragOver"
+        >
           <mat-icon class="icon-upload">cloud_upload</mat-icon>
           <p>
             Arrastra o selecciona los archivos de cada prueba en formato (.xlsx)
           </p>
+          <input
+            #fileInput
+            type="file"
+            accept=".xlsx"
+            multiple
+            style="display: none"
+            (change)="onFileSelected($event)"
+          />
+
+          <button type="button" (click)="fileInput.click()" class="btnUploadFile" mat-raised-button>
+            Seleccionar archivos
+          </button>
+        </div>
+
+        <div
+          *ngIf="uploadedFiles.length > 0"
+          style="margin-top: 20px; padding: 0 20px"
+        >
+          <h4 style="font-family: 'Alata', sans-serif; color: #156f9c">
+            Archivos seleccionados:
+          </h4>
+          <ul style="font-family: 'Alata', sans-serif; font-size: 15px">
+            <li *ngFor="let file of uploadedFiles">{{ file.name }}</li>
+          </ul>
         </div>
         <app-buttons-below
           [showButtonLeft]="true"
