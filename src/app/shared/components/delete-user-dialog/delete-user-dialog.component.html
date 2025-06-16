@@ -1,15 +1,14 @@
 <div class="header">
-  <mat-icon class="icon-header">warning</mat-icon>
-  <h2 mat-dialog-title class="text-header-modal">¿Estas seguro de eliminar Usuario?</h2>
+  <h2 mat-dialog-title class="text-header-modal">
+    ¿Estás seguro de eliminar <b>{{ data.name }}</b>?
+  </h2>
 </div>
 
-<mat-dialog-content>
-  <p class="text-subheader-modal">Esta acción eliminará al usuario <b>Usuario</b> de forma permanente</p>
+<mat-dialog-content class="modal-content">
+  <p class="text-subheader-modal">{{ getMessage() }}</p>
 </mat-dialog-content>
 
-<mat-dialog-actions align="end" style="margin-top: 10px;">
-  <button mat-button mat-dialog-close class="btnCancel">Cancelar</button>
-  <button mat-raised-button color="warn" mat-dialog-close class="btnDelete">
-    Eliminar
-  </button>
+<mat-dialog-actions align="end" class="modal-actions">
+  <button mat-stroked-button [mat-dialog-close]="'cancel'" class="btnCancel">Cancelar</button>
+  <button mat-flat-button color="warn" [mat-dialog-close]="'confirm'" class="btnDelete">Eliminar</button>
 </mat-dialog-actions>

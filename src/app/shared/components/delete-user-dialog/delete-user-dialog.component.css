@@ -1,50 +1,40 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  border-radius: 8px 8px 0 0;
-}
-
-.icon-header {
-  color: #eec028;
-  font-size: 32px;
-  width: 30px;
-  height: 30px;
-  margin-top: 6px;
-  margin-left: 6px;
+  padding: 20px 20px 10px;
+  gap: 12px;
 }
 
 .text-header-modal {
   font-family: 'Alata', sans-serif;
-  font-size: 17px;
-  font-weight: 550;
+  font-size: 16px;
+  font-weight: 600;
   color: #333;
-  margin-right: 50px;
+  margin: 0;
 }
 
-.text-subheader-modal{
-    font-family: 'Alata', sans-serif;
+.modal-content {
+  padding: 0 50px 20px;
+  font-family: 'Alata', sans-serif;
+  font-size: 14px;
+  color: #555;
 }
 
-
-.w-full{
-    width: 100%;
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 20px 20px;
 }
 
-.icon-input{
-    color: #156F9C;
+.btnCancel {
+  color: #156F9C !important;
+  font-family: 'Alata', sans-serif;
+  border: 1.5px solid #156F9C !important;
 }
 
-.btnCancel{
-    color: #156F9C !important;
-    font-family: 'Alata', sans-serif;
-    width: 30%;
-    border: 1.5px solid #156F9C;
-}
-
-.btnDelete{
-    background-color: #156F9C !important;
-    color: #ffffff !important;
-    font-family: 'Alata', sans-serif;
-    width: 30%;
+.btnDelete {
+  background-color: #156F9C !important;
+  color: #ffffff !important;
+  font-family: 'Alata', sans-serif;
 }
