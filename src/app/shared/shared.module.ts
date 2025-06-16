@@ -18,12 +18,15 @@ import { DeleteUserDialogComponent } from './components/delete-user-dialog/delet
 import { BottomSheetPhotoComponent } from './components/bottom-sheet-photo/bottom-sheet-photo.component';
 import { SpinnerLoadingComponent } from './components/spinner-loading/spinner-loading.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ExcelUploaderComponent } from './components/excel-uploader/excel-uploader.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBar, MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
 
 @NgModule({
- declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent, DeleteUserDialogComponent, BottomSheetPhotoComponent, SpinnerLoadingComponent],
+ declarations: [SidebarComponent, ButtonsBelowComponent, ConfirmDeleteDialogComponent, CreateEditDialogComponent, DeleteUserDialogComponent, BottomSheetPhotoComponent, SpinnerLoadingComponent, ExcelUploaderComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -37,12 +40,15 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatStepperModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   exports: [
     SidebarComponent, 
     ButtonsBelowComponent,
-    SpinnerLoadingComponent
+    SpinnerLoadingComponent,
+    ExcelUploaderComponent
   ]
 })
 export class SharedModule { }
