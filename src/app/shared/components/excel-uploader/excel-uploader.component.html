@@ -1,0 +1,46 @@
+<div
+  class="step-content"
+  (drop)="onFileDrop($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  [class.drag-over]="isDragOver"
+>
+  <mat-icon class="icon-upload">cloud_upload</mat-icon>
+  <p>
+    Arrastra o selecciona el archivo de <b>{{ testName }}</b> en formato (.xlsx)
+  </p>
+  <input
+    #fileInput
+    type="file"
+    accept=".xlsx"
+    multiple
+    style="display: none"
+    (change)="onFileSelected($event)"
+  />
+  <button
+    type="button"
+    (click)="fileInput.click()"
+    class="btnUploadFile"
+    mat-raised-button
+  >
+    Seleccionar archivos
+  </button>
+
+  <div style="margin-top: 20px;">
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="primary">
+    </mat-progress-bar>
+  </div>
+</div>
+
+<div *ngIf="uploadedFile" class="selected-file-container">
+  <div class="file-header">
+    <h4>Archivo seleccionado:</h4>
+  </div>
+  <div class="file-body">
+    <span>{{ uploadedFile.name }}</span>
+    <button mat-icon-button color="warn" (click)="removeFile()" aria-label="Eliminar archivo">
+      <mat-icon style="color: #156F9C;">delete</mat-icon>
+    </button>
+  </div>
+</div>
+
