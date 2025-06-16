@@ -39,7 +39,10 @@
               class="custom-input full-width"
             >
               <mat-icon matPrefix>device_thermostat</mat-icon>
-              <input matInput placeholder="Temperatura del laboratorio*" />
+              <input
+                matInput
+                placeholder="Temperatura de la muestra al ingreso del laboratorio (°C)*"
+              />
             </mat-form-field>
           </form>
         </div>
@@ -53,46 +56,29 @@
 
       <mat-step>
         <ng-template matStepLabel>Reportes de cálculos de Excel</ng-template>
-        <div
-          class="step-content"
-          (drop)="onFileDrop($event)"
-          (dragover)="onDragOver($event)"
-          (dragleave)="onDragLeave($event)"
-          [class.drag-over]="isDragOver"
-        >
-          <mat-icon class="icon-upload">cloud_upload</mat-icon>
-          <p>
-            Arrastra o selecciona los archivos de cada prueba en formato (.xlsx)
-          </p>
-          <input
-            #fileInput
-            type="file"
-            accept=".xlsx"
-            multiple
-            style="display: none"
-            (change)="onFileSelected($event)"
-          />
-
-          <button type="button" (click)="fileInput.click()" class="btnUploadFile" mat-raised-button>
-            Seleccionar archivos
-          </button>
-        </div>
-
-        <div
-          *ngIf="uploadedFiles.length > 0"
-          style="margin-top: 20px; padding: 0 20px"
-        >
-          <h4 style="font-family: 'Alata', sans-serif; color: #156f9c">
-            Archivos seleccionados:
-          </h4>
-          <ul style="font-family: 'Alata', sans-serif; font-size: 15px">
-            <li *ngFor="let file of uploadedFiles">{{ file.name }}</li>
-          </ul>
+        <div style="margin-top: 10px;">
+          <mat-accordion>
+          <mat-expansion-panel *ngFor="let prueba of pruebas; let i = index"  [expanded]="panelAbiertoIndex === i" [disabled]="!canActivatePanel(i)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon [ngStyle]="{color: estadoPruebas.get(prueba) ? '#156F9C' : 'gray'}" class="iconCheck">
+                  {{ estadoPruebas.get(prueba) ? 'check_circle' : 'check_circle_outline' }}
+                </mat-icon>
+                {{ prueba }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-excel-uploader [testName]="prueba"
+              (fileUploaded)="onFilesReceived($event)"
+              (fileRemoved)="onFileRemoved($event)"
+            ></app-excel-uploader>
+          </mat-expansion-panel>
+        </mat-accordion>
         </div>
         <app-buttons-below
           [showButtonLeft]="true"
           [showButtonRight]="true"
           textButtonRight="Siguiente"
+          [disabled]="!allFilesUploaded()"
           textButtonLeft="Regresar"
         ></app-buttons-below>
       </mat-step>

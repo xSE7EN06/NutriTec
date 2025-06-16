@@ -134,13 +134,14 @@
   }
 }
 
-.step-content.drag-over {
-  border-color: #156F9C !important;
-  background-color: #e6f4fb;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+.iconCheck{
+  margin-right: 15px;
 }
 
-.btnUploadFile{
-  background-color: #156F9C !important;
-  color: white !important;
+
+/*DISEÑO DE STEP EN LA SECCION DE SUBIR ARCHIVOS*/
+.content-stepper{
+  margin-top: 3px;
 }
+
+
