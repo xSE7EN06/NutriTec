@@ -10,3 +10,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 20px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
 }
+
+
+::ng-deep .custom-snackbar {
+  background-color: #1565c0 !important;
+  color: white !important;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 8px;
+}
