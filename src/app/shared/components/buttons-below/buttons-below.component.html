@@ -1,4 +1,4 @@
 <div class="buttons-content-down">
     <button class="btn-left" mat-button matStepperPrevious  [ngStyle]="{ visibility: showButtonLeft ? 'visible' : 'hidden' }">{{textButtonLeft}}</button>
-    <button class="btn-right" mat-button matStepperNext  [ngStyle]="{ visibility: showButtonRight ? 'visible' : 'hidden' }">{{textButtonRight}}</button>
+    <button class="btn-right" mat-button matStepperNext  [disabled]="disabled" [ngStyle]="{ visibility: showButtonRight ? 'visible' : 'hidden' }">{{textButtonRight}}</button>
 </div>

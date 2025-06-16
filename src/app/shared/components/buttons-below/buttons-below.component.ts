@@ -14,4 +14,6 @@ export class ButtonsBelowComponent {
   @Input() textButtonRight !: string;
   @Input() textButtonLeft !: string;
 
+   @Input() disabled = true;
+
 }
